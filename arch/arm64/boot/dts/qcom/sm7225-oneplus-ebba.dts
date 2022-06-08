@@ -77,11 +77,6 @@
 	};
 };
 
-&adsp {
-	status = "okay";
-	firmware-name = "qcom/sm7225/fairphone4/adsp.mdt";
-};
-
 &apps_rsc {
 	pm6350-rpmh-regulators {
 		compatible = "qcom,pm6350-rpmh-regulators";
@@ -298,18 +293,6 @@
 
 &gmu {
 	status = "okay";
-};
-
-&ipa {
-	status = "okay";
-
-	memory-region = <&pil_ipa_fw_mem>;
-	firmware-name = "qcom/sm7225/fairphone4/ipa_fws.mdt";
-};
-
-&mpss {
-	status = "okay";
-	firmware-name = "qcom/sm7225/fairphone4/modem.mdt";
 };
 
 &pm6150l_wled {
