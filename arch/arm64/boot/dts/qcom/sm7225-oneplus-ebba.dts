@@ -296,16 +296,7 @@
 	};
 };
 
-&cdsp {
-	status = "okay";
-	firmware-name = "qcom/sm7225/fairphone4/cdsp.mdt";
-};
-
 &gmu {
-	status = "okay";
-};
-
-&gpu {
 	status = "okay";
 };
 
@@ -429,15 +420,6 @@
 		drive-strength = <2>;
 		bias-pull-up;
 	};
-};
-
-&sdhc_2 {
-	status = "okay";
-
-	cd-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-
-	vmmc-supply = <&vreg_l9e>;
-	vqmmc-supply = <&vreg_l6e>;
 };
 
 &tlmm {
@@ -583,35 +565,4 @@
 	vdd-1.3-rfa-supply = <&vreg_l2e>;
 	vdd-3.3-ch0-supply = <&vreg_l10e>;
 	vdd-3.3-ch1-supply = <&vreg_l11e>;
-};
-
-&mdss {
-	status = "okay";
-};
-
-&dsi0 {
-	status = "okay";
-
-	panel@0 {
-		compatible = "mdss,hx83112a-auo";
-		reg = <0>;
-
-		backlight = <&pm6150l_wled>;
-		reset-gpios = <&pm6150l_gpio 9 GPIO_ACTIVE_LOW>;
-
-		port {
-			panel_in: endpoint {
-				remote-endpoint = <&dsi0_out>;
-			};
-		};
-	};
-};
-
-&dsi0_phy {
-	status = "okay";
-};
-
-&dsi0_out {
-	data-lanes = <0 1 2 3>;
-	remote-endpoint = <&panel_in>;
 };
